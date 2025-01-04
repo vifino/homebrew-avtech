@@ -1,4 +1,4 @@
-# Vifino Avtech
+# vifino's AV Tech Homebrew repository
 
 ## How do I install these formulae?
 
