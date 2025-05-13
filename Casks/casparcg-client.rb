@@ -14,6 +14,8 @@ cask "casparcg-client" do
   desc "Client for controlling the CasparCG media server"
   homepage "https://github.com/CasparCG/client"
 
+  depends_on macos: ">= :bigsur"
+
   app "CasparCG Client.app"
 
   zap trash: "~/.CasparCG/"
