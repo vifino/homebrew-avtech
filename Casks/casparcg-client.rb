@@ -1,7 +1,7 @@
 cask "casparcg-client" do
-  version "2.3.0"
-  sha256 arm:   "59fa05f530e544b1aea9b0134babefe0dceb1a85c22511dafc45aed4fb0ad218",
-         intel: "c3e04612061ba9d13b199e82cc24f5393adced18fe885e69730b390ecbe081bc"
+  version "2.3.1"
+  sha256 arm:   "ae8ee72a8490b6bb3ba9cc5d6cc1221252e26e07568ff5b1640d5ce5322b841e",
+         intel: "47337a5982f7f565719f32e73ddf1d4314ebb05e6d33efcc43b5e8f823995e80"
 
   on_arm do
     url "https://github.com/CasparCG/client/releases/download/v#{version}/casparcg-client-v#{version}-macos-arm64.dmg"
@@ -14,7 +14,12 @@ cask "casparcg-client" do
   desc "Client for controlling the CasparCG media server"
   homepage "https://github.com/CasparCG/client"
 
-  depends_on macos: ">= :bigsur"
+  depends_on :macos
+
+  livecheck do
+    url "https://github.com/CasparCG/client/releases/latest"
+    regex(/[-_.]?v?(\d+(?:\.\d+)+)/i)
+  end
 
   app "CasparCG Client.app"
 
